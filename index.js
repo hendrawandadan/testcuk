@@ -27,11 +27,11 @@ client.on('authenticated', () => {
 });
 client.initialize();
 
-app.get("/", async (req, res) => {
+app.get('/', async (req, res) => {
     res.send("Server Whatsapp Running OK");
 })
 
-app.post("/kirimpesan", (req, res) => {
+app.post('/kirimpesan', (req, res) => {
     const nomor = req.body.nomor;
     const pesan = req.body.pesan;
     client.sendMessage(nomor + "@c.us", pesan).then(response => {
